@@ -1,0 +1,54 @@
+{
+  "_README": [
+    "scan2print printer shrinkage calibration.",
+    "",
+    "Each material holds three PRE-SCALE factors. The mesh is multiplied by",
+    "these before slicing so the cooled part lands on the nominal dimension.",
+    "factor = nominal_mm / measured_mm, so a part that prints small gets a",
+    "factor above 1.0.",
+    "",
+    "TO CALIBRATE (do this once per filament type -- it is what makes the",
+    "millimetre claim real instead of theoretical):",
+    "  1. python -m scan2print.compensate --cube out/cal_cube.stl",
+    "  2. Slice and print it with the material you actually use.",
+    "  3. Let it cool completely (30+ min). Measure X, Y and Z across the",
+    "     flat faces with calipers, away from the marked corner notch and",
+    "     away from any elephant-foot on the first layer.",
+    "  4. python -m scan2print.compensate --measure PLA 29.91 29.93 30.04",
+    "",
+    "Until 'calibrated' is true for a material, scan2print ignores the 1.0",
+    "factors below and falls back to the literature estimates in",
+    "config.DEFAULT_SHRINK. Measured values always win."
+  ],
+  "version": 1,
+  "nominal_cube_mm": 30.0,
+  "materials": {
+    "ABS": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0,
+      "calibrated": false,
+      "nominal_mm": null,
+      "measured_mm": null,
+      "note": "uncalibrated -- falling back to config.DEFAULT_SHRINK['ABS']"
+    },
+    "PETG": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0,
+      "calibrated": false,
+      "nominal_mm": null,
+      "measured_mm": null,
+      "note": "uncalibrated -- falling back to config.DEFAULT_SHRINK['PETG']"
+    },
+    "PLA": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0,
+      "calibrated": false,
+      "nominal_mm": null,
+      "measured_mm": null,
+      "note": "uncalibrated -- falling back to config.DEFAULT_SHRINK['PLA']"
+    }
+  }
+}

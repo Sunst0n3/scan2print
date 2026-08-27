@@ -1,0 +1,27 @@
+{
+  "spec": {
+    "squares_x": 7,
+    "squares_y": 5,
+    "square_mm": 24.0,
+    "marker_mm": 18.0,
+    "dict_name": "DICT_5X5_1000"
+  },
+  "dpi": 300,
+  "px_per_square": 283,
+  "effective_square_mm": 23.960666666666665,
+  "effective_board_mm": [
+    167.72466666666665,
+    119.80333333333333
+  ],
+  "page_px": [
+    2550,
+    3300
+  ],
+  "page_mm": [
+    215.9,
+    279.4
+  ],
+  "ruler_mm_rendered": 99.99133333333333,
+  "vruler_mm_rendered": 50.038,
+  "paper": "letter"
+}
