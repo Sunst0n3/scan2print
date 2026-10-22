@@ -27,10 +27,11 @@ video.mov
 
 ## Install / run
 
-Everything is already installed in this repo's venv. Nothing else is needed.
+Requires macOS (for Object Capture), Python (see `.python-version`) and
+[uv](https://docs.astral.sh/uv/).
 
 ```bash
-cd ~/scan2print
+git clone https://github.com/Sunst0n3/scan2print.git && cd scan2print
 uv sync                      # installs the `scan2print` console script
 .venv/bin/scan2print doctor  # or: .venv/bin/python -m scan2print.cli doctor
 ```
